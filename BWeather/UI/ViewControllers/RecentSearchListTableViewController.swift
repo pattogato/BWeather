@@ -9,6 +9,10 @@
 import UIKit
 import SnapKit
 
+protocol RecentSearchListDelegate: class {
+  func itemTouched(text city: String)
+}
+
 protocol RecentSearchListDataProviderProtocol {
   func numberOfItems() -> Int
   func item(at indexPath: IndexPath) -> RecentSearchListItemViewModelProtocol
@@ -27,6 +31,7 @@ final class RecentSearchListTableViewController: UITableViewController {
     static let cityCellId = "RecentSearchTableViewCell"
   }
   
+  weak var delegate: RecentSearchListDelegate?
   var dataProvider: RecentSearchListDataProviderProtocol!
   
   override func viewDidLoad() {
@@ -100,6 +105,12 @@ extension RecentSearchListTableViewController {
       tableView.deleteRows(at: [indexPath], with: .automatic)
       tableView.endUpdates()
     }
+  }
+  
+  override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    tableView.deselectRow(at: indexPath, animated: true)
+    self.navigationController?.popViewController(animated: true)
+    self.delegate?.itemTouched(text: self.dataProvider.item(at: indexPath).name)
   }
   
 }

@@ -24,11 +24,6 @@ final class ManagersAssembly: Assembly {
                                storyboards: storyboards)
       }.inObjectScope(.container)
     
-    // Persistance manager
-    container.register(PersistanceManagerProtocol.self) { r in
-      return PersistanceManager()
-    }
-    
   }
   
   

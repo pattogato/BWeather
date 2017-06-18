@@ -100,6 +100,8 @@ class SearchViewController: UIViewController {
     
     if let pickerVC = segue.destination as? CountryPickerViewController {
       pickerVC.delegate = self
+    } else if let recentVC = segue.destination as? RecentSearchListTableViewController {
+      recentVC.delegate = self
     }
   }
 }
@@ -174,3 +176,14 @@ extension SearchViewController: CountryPickerControllerDelegate {
   }
   
 }
+
+// MARK: - RecentSearchListDelegate methods
+
+extension SearchViewController: RecentSearchListDelegate {
+  
+  func itemTouched(text city: String) {
+    searchCity(text: city)
+  }
+  
+}
+

@@ -29,7 +29,6 @@
 		B16D160F1EE1A28E00731719 /* LoaderHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B16D15F51EE1A28E00731719 /* LoaderHelper.swift */; };
 		B16D16101EE1A28E00731719 /* ApplicationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B16D15F71EE1A28E00731719 /* ApplicationRouter.swift */; };
 		B16D16111EE1A28E00731719 /* DIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B16D15F81EE1A28E00731719 /* DIManager.swift */; };
-		B16D16121EE1A28E00731719 /* PersistanceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B16D15F91EE1A28E00731719 /* PersistanceManager.swift */; };
 		B16D16131EE1A28E00731719 /* WeatherNetworkModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = B16D15FC1EE1A28E00731719 /* WeatherNetworkModels.swift */; };
 		B16D16141EE1A28E00731719 /* ServiceResources.swift in Sources */ = {isa = PBXBuildFile; fileRef = B16D15FE1EE1A28E00731719 /* ServiceResources.swift */; };
 		B16D16181EE1A99400731719 /* RecentSearchListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B16D16171EE1A99400731719 /* RecentSearchListTableViewController.swift */; };
@@ -65,7 +64,6 @@
 		B16D15F51EE1A28E00731719 /* LoaderHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoaderHelper.swift; sourceTree = "<group>"; };
 		B16D15F71EE1A28E00731719 /* ApplicationRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationRouter.swift; sourceTree = "<group>"; };
 		B16D15F81EE1A28E00731719 /* DIManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DIManager.swift; sourceTree = "<group>"; };
-		B16D15F91EE1A28E00731719 /* PersistanceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersistanceManager.swift; sourceTree = "<group>"; };
 		B16D15FC1EE1A28E00731719 /* WeatherNetworkModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherNetworkModels.swift; sourceTree = "<group>"; };
 		B16D15FE1EE1A28E00731719 /* ServiceResources.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceResources.swift; sourceTree = "<group>"; };
 		B16D16171EE1A99400731719 /* RecentSearchListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecentSearchListTableViewController.swift; sourceTree = "<group>"; };
@@ -185,7 +183,6 @@
 			children = (
 				B16D15F71EE1A28E00731719 /* ApplicationRouter.swift */,
 				B16D15F81EE1A28E00731719 /* DIManager.swift */,
-				B16D15F91EE1A28E00731719 /* PersistanceManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -400,7 +397,6 @@
 				B16D16141EE1A28E00731719 /* ServiceResources.swift in Sources */,
 				B16D160C1EE1A28E00731719 /* StoragesAssembly.swift in Sources */,
 				B16D160B1EE1A28E00731719 /* ServicesAssembly.swift in Sources */,
-				B16D16121EE1A28E00731719 /* PersistanceManager.swift in Sources */,
 				B16D160F1EE1A28E00731719 /* LoaderHelper.swift in Sources */,
 				B13A2B371EE5EDFA00A628A8 /* RecentSearchStorage.swift in Sources */,
 				B16D16081EE1A28E00731719 /* ApplicationAssembly.swift in Sources */,
