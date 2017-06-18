@@ -1,0 +1,32 @@
+/* 
+  Localizable.strings
+  BWeather
+
+  Created by Bence Pattogato on 2017. 06. 05..
+  Copyright © 2017. Bence Pattogato. All rights reserved.
+*/
+
+// MARK: - General
+"general.loading" = "Loading...";
+
+// MARK: - Error
+"error.retry" = "Retry";
+"error.cancel" = "Cancel";
+"error.title" = "Error occured";
+
+// MARK: - Recent search
+"recent.edit" = "Edit";
+"recent.done" = "Done";
+"recent.noitems" = "There are no recently searched items yet";
+
+// MARK: - Current weather
+"current.city.unknown" = "Unknown city";
+"current.cloud.unknown" = "Unknown weather";
+"current.country.unknown" = "NA";
+"current.description" = "Description";
+"current.pressure" = "Pressure";
+"current.humidity" = "Humidity";
+"current.tempmin" = "Min. Temp";
+"current.tempmax" = "Max. Temp";
+"current.windspeed" = "Wind speed";
+"current.visiblity" = "Visiblity";
