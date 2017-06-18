@@ -56,6 +56,18 @@ class SearchViewController: UIViewController {
   @IBOutlet weak var currentTemperatureLabel: UILabel!
   @IBOutlet weak var tableView: UITableView!
   
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    super.prepare(for: segue, sender: sender)
+    
+    if let pickerVC = segue.destination as? CountryPickerViewController {
+      pickerVC.delegate = self
+    } else if let recentVC = segue.destination as? RecentSearchListTableViewController {
+      recentVC.delegate = self
+    }
+  }
+  
+  // MARK: - Custom methods
+  
   fileprivate func setupUI(viewModel: CurrentWeatherViewModelProtocol) {
     cityLabel.text = viewModel.city
     weatherShortDescriptionLabel.text = viewModel.shortDescription
@@ -95,15 +107,20 @@ class SearchViewController: UIViewController {
     self.performSegue(withIdentifier: "CountryPickerSegue", sender: nil)
   }
   
-  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    super.prepare(for: segue, sender: sender)
+  fileprivate func searchForLocation() {
     
-    if let pickerVC = segue.destination as? CountryPickerViewController {
-      pickerVC.delegate = self
-    } else if let recentVC = segue.destination as? RecentSearchListTableViewController {
-      recentVC.delegate = self
-    }
   }
+  
+  
+}
+
+// MARK: - IBActions
+extension SearchViewController {
+  
+  @IBAction func locationBarButtonItemDidTap(_ sender: Any) {
+    
+  }
+  
 }
 
 // MARK: - UISearchBarDelegate methods
@@ -183,6 +200,7 @@ extension SearchViewController: RecentSearchListDelegate {
   
   func itemTouched(text city: String) {
     searchCity(text: city)
+    searchBar.text = city
   }
   
 }
