@@ -23,7 +23,7 @@ final class SearchDataProvider: SearchDataProviderProtocol {
     return weatherService
       .getCurrentWeather(keyword: text)
       .map({
-        self.recentStorage.saveItem(RecentSearchModel(name: text, extraInfo: $0.extraInfo?.country ?? "", id: nil))
+        self.recentStorage.saveItem(RecentSearchModel(name: $0.name ?? text, extraInfo: $0.extraInfo?.country ?? "", id: nil))
         return WeatherViewModel(
           networkModel: $0,
           unit: self.recentStorage.preferredUnit,
@@ -35,6 +35,7 @@ final class SearchDataProvider: SearchDataProviderProtocol {
     return weatherService
       .getCurrentWeather(zipCode: zip, country: country)
       .map({
+        self.recentStorage.saveItem(RecentSearchModel(name: $0.name ?? zip, extraInfo: $0.extraInfo?.country ?? "", id: nil))
         return WeatherViewModel(
           networkModel: $0,
           unit: self.recentStorage.preferredUnit,
