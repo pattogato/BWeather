@@ -15,6 +15,7 @@ import SnapKit
 protocol SearchDataProviderProtocol {
   func search(for text: String) -> Observable<CurrentWeatherViewModelProtocol>
   func searchFor(zip: String, country: String) -> Observable<CurrentWeatherViewModelProtocol>
+  func searchForLocation() -> Observable<CurrentWeatherViewModelProtocol>
 }
 
 protocol CurrentWeatherViewModelProtocol {
@@ -108,7 +109,20 @@ class SearchViewController: UIViewController {
   }
   
   fileprivate func searchForLocation() {
-    
+    LoaderHelper.showLoader(title: "Getting location information & loading weather")
+    dataProvider.searchForLocation().subscribe { (event) in
+      LoaderHelper.dismissLoader()
+      switch event {
+      case .next(let weatherViewModel):
+        self.setupUI(viewModel: weatherViewModel)
+      case .error(let error):
+        AlertHelper.showError(from: self, error: error, retryActionHandler: { (_) in
+          self.searchForLocation()
+        })
+      default:
+        break
+      }
+    }.addDisposableTo(disposeBag)
   }
   
   
@@ -118,7 +132,7 @@ class SearchViewController: UIViewController {
 extension SearchViewController {
   
   @IBAction func locationBarButtonItemDidTap(_ sender: Any) {
-    
+    searchForLocation()
   }
   
 }

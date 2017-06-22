@@ -49,7 +49,7 @@ enum TemperatureUnit: Int {
   }
 }
 
-final class CurrentWeatherNetworkModel: Mappable {
+struct CurrentWeatherNetworkModel: Mappable {
   
   var coordinates: CoordinateNetworkModel?
   var weather: [WeatherNetworkModel]?
@@ -63,7 +63,7 @@ final class CurrentWeatherNetworkModel: Mappable {
   var id: String?
   var name: String?
   
-  func mapping(map: Map) {
+  mutating func mapping(map: Map) {
     coordinates <- map["coordinates"]
     weather <- map["weather"]
     base <- map["base"]
@@ -81,12 +81,12 @@ final class CurrentWeatherNetworkModel: Mappable {
   
 }
 
-final class CoordinateNetworkModel: Mappable {
+struct CoordinateNetworkModel: Mappable {
   
   var lon: Double?
   var lat: Double?
   
-  func mapping(map: Map) {
+  mutating func mapping(map: Map) {
     lon <- map["lon"]
     lat <- map["lat"]
   }
@@ -95,14 +95,14 @@ final class CoordinateNetworkModel: Mappable {
   
 }
 
-final class WeatherNetworkModel: Mappable {
+struct WeatherNetworkModel: Mappable {
   
   var id: Int?
   var main: String?
   var desc: String?
   var icon: String?
   
-  func mapping(map: Map) {
+  mutating func mapping(map: Map) {
     id <- map["id"]
     main <- map["main"]
     desc <- map["description"]
@@ -113,14 +113,14 @@ final class WeatherNetworkModel: Mappable {
   
 }
 
-final class WeatherMainValuesNetworkModel: Mappable {
+struct WeatherMainValuesNetworkModel: Mappable {
   var temp: Double?
   var pressure: Double?
   var humidity: Double?
   var tempMin: Double?
   var tempMax: Double?
   
-  func mapping(map: Map) {
+  mutating func mapping(map: Map) {
     temp <- map["temp"]
     pressure <- map["pressure"]
     humidity <- map["humidity"]
@@ -132,11 +132,11 @@ final class WeatherMainValuesNetworkModel: Mappable {
   
 }
 
-final class WindValueNetworkModel: Mappable {
+struct WindValueNetworkModel: Mappable {
   var speed: Double?
   var degree: Double?
   
-  func mapping(map: Map) {
+  mutating func mapping(map: Map) {
     speed <- map["speed"]
     degree <- map["deg"]
   }
@@ -145,22 +145,22 @@ final class WindValueNetworkModel: Mappable {
   
 }
 
-final class CloudsNetworkModel: Mappable {
+struct CloudsNetworkModel: Mappable {
   var all: String?
   
-  func mapping(map: Map) {
+  mutating func mapping(map: Map) {
     all <- map["all"]
   }
   
   init?(map: Map) { }
 }
 
-final class ExtraWeatherInfoNetworkModel: Mappable {
+struct ExtraWeatherInfoNetworkModel: Mappable {
   var country: String?
   var sunrise: Date?
   var sunset: Date?
   
-  func mapping(map: Map) {
+  mutating func mapping(map: Map) {
     country <- map["country"]
     sunrise <- map["sunrise"]
     sunset <- map["sunset"]
