@@ -16,6 +16,7 @@ protocol SearchDataProviderProtocol {
   func search(for text: String) -> Observable<CurrentWeatherViewModelProtocol>
   func searchFor(zip: String, country: String) -> Observable<CurrentWeatherViewModelProtocol>
   func searchForLocation() -> Observable<CurrentWeatherViewModelProtocol>
+  func loadMostRecentLocation() -> Observable<CurrentWeatherViewModelProtocol>
 }
 
 protocol CurrentWeatherViewModelProtocol {
@@ -29,20 +30,24 @@ protocol CurrentWeatherViewModelProtocol {
 
 class SearchViewController: UIViewController {
   
+  // MARK: - Constants
   fileprivate struct Constants {
     static let collectionViewCellId = "WeatherInfoTableViewCell"
     static let countrySelectorHeight: CGFloat = 150.0
   }
   
   // MARK: - Dependencies
+  
   var dataProvider: SearchDataProviderProtocol!
   
   // MARK: - Properties
-  private var disposeBag = DisposeBag()
+  
+  fileprivate var disposeBag = DisposeBag()
   fileprivate var viewModel: CurrentWeatherViewModelProtocol?
   private var countryPickerContainerView: UIView?
   fileprivate var zipSearchText: String?
   fileprivate var viewTapGestureRecognizer: UITapGestureRecognizer?
+  fileprivate var firstAppearance: Bool = true
   fileprivate var selectedCountryCode: String? {
     didSet {
       print(selectedCountryCode!)
@@ -50,6 +55,7 @@ class SearchViewController: UIViewController {
   }
   
   // MARK: - IBOutlets
+  
   @IBOutlet weak var searchBar: UISearchBar!
   @IBOutlet weak var cityLabel: UILabel!
   @IBOutlet weak var iconImageView: UIImageView!
@@ -57,6 +63,18 @@ class SearchViewController: UIViewController {
   @IBOutlet weak var countryLabel: UILabel!
   @IBOutlet weak var currentTemperatureLabel: UILabel!
   @IBOutlet weak var tableView: UITableView!
+  @IBOutlet weak var noRecentsLabel: UILabel!
+  
+  // MARK: - Lifecycle methods
+  
+  override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
+    
+    if firstAppearance {
+      firstAppearance = false
+      searchMostRecent()
+    }
+  }
   
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     super.prepare(for: segue, sender: sender)
@@ -68,15 +86,23 @@ class SearchViewController: UIViewController {
     }
   }
   
-  // MARK: - Custom methods
+}
+
+// MARK: - Business logic & content related functions
+
+extension SearchViewController {
   
-  fileprivate func setupUI(viewModel: CurrentWeatherViewModelProtocol) {
-    cityLabel.text = viewModel.city
-    weatherShortDescriptionLabel.text = viewModel.shortDescription
-    countryLabel.text = viewModel.country
-    currentTemperatureLabel.text = viewModel.currentTemperature
-    if let imageUrl = viewModel.imageUrl {
+  fileprivate func setupUI(viewModel: CurrentWeatherViewModelProtocol?) {
+    showNoRecentsLabel(viewModel == nil)
+    
+    cityLabel.text = viewModel?.city ?? ""
+    weatherShortDescriptionLabel.text = viewModel?.shortDescription ?? ""
+    countryLabel.text = viewModel?.country ?? ""
+    currentTemperatureLabel.text = viewModel?.currentTemperature ?? ""
+    if let imageUrl = viewModel?.imageUrl {
       iconImageView.kf.setImage(with: ImageResource(downloadURL: imageUrl))
+    } else {
+      iconImageView.image = nil
     }
     
     self.viewModel = viewModel
@@ -132,6 +158,23 @@ class SearchViewController: UIViewController {
       self.view.addGestureRecognizer(viewTapGestureRecognizer!)
     }
     viewTapGestureRecognizer?.isEnabled = true
+  }
+  
+  fileprivate func searchMostRecent() {
+    dataProvider.loadMostRecentLocation().subscribe { (weatherEvent) in
+      switch weatherEvent {
+      case .next(let weathViewModel):
+        self.setupUI(viewModel: weathViewModel)
+      case .error:
+        self.setupUI(viewModel: nil)
+      default:
+        break
+      }
+    }.addDisposableTo(disposeBag)
+  }
+  
+  fileprivate func showNoRecentsLabel(_ show: Bool) {
+    noRecentsLabel.isHidden = !show
   }
   
   func viewDidTap() {

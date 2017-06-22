@@ -173,6 +173,13 @@
                                     <constraint firstAttribute="width" constant="70" id="sUq-Ze-EDb"/>
                                 </constraints>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rf0-wy-mr3">
+                                <rect key="frame" x="20" y="288" width="335" height="91"/>
+                                <string key="text">You don't have any recent searches. Type in the search field above a city name / postal code OR tap the left top button for location based weather info.</string>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="19"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -187,14 +194,18 @@
                             <constraint firstItem="pFK-vS-cfQ" firstAttribute="top" secondItem="UW8-SI-DOc" secondAttribute="top" id="O7u-Nv-POd"/>
                             <constraint firstItem="WD0-vH-uHM" firstAttribute="leading" secondItem="5Wj-ly-i4A" secondAttribute="leading" id="Rhf-tl-8xw"/>
                             <constraint firstItem="F72-Tb-qyH" firstAttribute="top" secondItem="SqJ-QP-RDY" secondAttribute="bottom" id="WNm-5c-RTU"/>
+                            <constraint firstItem="Rf0-wy-mr3" firstAttribute="centerX" secondItem="5Wj-ly-i4A" secondAttribute="centerX" id="Wcx-A7-pCQ"/>
                             <constraint firstAttribute="trailing" secondItem="F72-Tb-qyH" secondAttribute="trailing" id="XSS-qV-ix7"/>
+                            <constraint firstAttribute="trailing" secondItem="Rf0-wy-mr3" secondAttribute="trailing" constant="20" id="acS-uN-Dub"/>
                             <constraint firstItem="iyb-US-LaA" firstAttribute="baseline" secondItem="UW8-SI-DOc" secondAttribute="baseline" id="bUJ-l5-mO8"/>
                             <constraint firstItem="UW8-SI-DOc" firstAttribute="leading" secondItem="pFK-vS-cfQ" secondAttribute="trailing" constant="16" id="dWP-W8-UEC"/>
                             <constraint firstAttribute="trailing" secondItem="WD0-vH-uHM" secondAttribute="trailing" id="edU-24-Nzg"/>
+                            <constraint firstItem="Rf0-wy-mr3" firstAttribute="leading" secondItem="5Wj-ly-i4A" secondAttribute="leading" constant="20" id="enr-fE-UUa"/>
                             <constraint firstItem="fZx-Lr-HCF" firstAttribute="top" secondItem="UW8-SI-DOc" secondAttribute="bottom" constant="8" id="gM4-yi-5Tc"/>
                             <constraint firstItem="843-bT-VPY" firstAttribute="centerX" secondItem="5Wj-ly-i4A" secondAttribute="centerX" id="jPn-4T-gop"/>
                             <constraint firstItem="fZx-Lr-HCF" firstAttribute="centerX" secondItem="5Wj-ly-i4A" secondAttribute="centerX" id="ltw-Wu-Jf6"/>
                             <constraint firstItem="UW8-SI-DOc" firstAttribute="centerX" secondItem="5Wj-ly-i4A" secondAttribute="centerX" id="rN6-mt-x13"/>
+                            <constraint firstItem="Rf0-wy-mr3" firstAttribute="centerY" secondItem="5Wj-ly-i4A" secondAttribute="centerY" id="zvd-VE-gyR"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Search" id="zJh-6V-riz">
@@ -215,6 +226,7 @@
                         <outlet property="countryLabel" destination="iyb-US-LaA" id="qgg-XP-HmA"/>
                         <outlet property="currentTemperatureLabel" destination="843-bT-VPY" id="Zbi-bL-dSY"/>
                         <outlet property="iconImageView" destination="pFK-vS-cfQ" id="dVn-nY-EeE"/>
+                        <outlet property="noRecentsLabel" destination="Rf0-wy-mr3" id="2oG-Jz-Q9Y"/>
                         <outlet property="searchBar" destination="F72-Tb-qyH" id="wuo-g1-xKP"/>
                         <outlet property="tableView" destination="WD0-vH-uHM" id="zdh-9p-Jkp"/>
                         <outlet property="weatherShortDescriptionLabel" destination="fZx-Lr-HCF" id="a5C-1H-lQd"/>

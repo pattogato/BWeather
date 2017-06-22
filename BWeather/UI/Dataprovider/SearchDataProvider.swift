@@ -10,6 +10,10 @@ import Foundation
 import RxSwift
 import CoreLocation
 
+enum SearchError: Error {
+  case NoRecent
+}
+
 final class SearchDataProvider: SearchDataProviderProtocol {
   
   private let weatherService: WeatherServiceProtocol
@@ -69,71 +73,79 @@ final class SearchDataProvider: SearchDataProviderProtocol {
     })
   }
   
-  private struct WeatherViewModel: CurrentWeatherViewModelProtocol {
-    var city: String
-    var shortDescription: String
-    var country: String
-    var currentTemperature: String
-    var moreInfo: [(title: String, info: String)]
-    var imageUrl: URL?
-    
-    init(networkModel: CurrentWeatherNetworkModel, unit: Units, temperatureUnit: TemperatureUnit) {
-      self.city = networkModel.name ?? "current.city.unknown".localized
-      self.shortDescription = networkModel.weather?.first?.main ?? "current.cloud.unknown".localized
-      self.country = networkModel.extraInfo?.country ?? "current.country.unknown".localized
-      self.currentTemperature = temperatureUnit.temp(value: round((networkModel.mainValues?.temp ?? 0) * 10 / 10))
-      self.moreInfo = [(title: String, info: String)]()
-      if let imagePath = networkModel.weather?.first?.icon {
-        self.imageUrl = constructImageUrl(imageName: imagePath)
-      }
-      
-      if let tempMin = networkModel.mainValues?.tempMin {
-        moreInfo.append((
-          title: "current.tempmin".localized,
-          info: temperatureUnit.temp(value: tempMin)
-        ))
-      }
-      if let tempMax = networkModel.mainValues?.tempMax {
-        moreInfo.append((
-          title: "current.tempmax".localized,
-          info: temperatureUnit.temp(value: tempMax)
-        ))
-      }
-      if let desc = networkModel.weather?.first?.desc {
-        moreInfo.append((
-          title: "current.description".localized,
-          info: desc
-        ))
-      }
-      if let pressure = networkModel.mainValues?.pressure {
-        moreInfo.append((
-          title: "current.pressure".localized,
-          info: String(pressure)
-        ))
-      }
-      if let humidity = networkModel.mainValues?.humidity {
-        moreInfo.append((
-          title: "current.humidity".localized,
-          info: String(humidity) + " %"
-        ))
-      }
-      if let windSpeed = networkModel.wind?.speed {
-        moreInfo.append((
-          title: "current.windspeed".localized,
-          info: unit.speed(value: windSpeed)
-        ))
-      }
-      if let visibility = networkModel.visiblity {
-        moreInfo.append((
-          title: "current.visiblity".localized,
-          info: unit.distance(value: visibility)
-        ))
-      }
-      
+  func loadMostRecentLocation() -> Observable<CurrentWeatherViewModelProtocol> {
+    if let mostRecent = self.recentStorage.getSavedItems().first {
+      return self.search(for: mostRecent.name)
+    }
+    return Observable.error(SearchError.NoRecent)
+  }
+  
+}
+
+fileprivate struct WeatherViewModel: CurrentWeatherViewModelProtocol {
+  var city: String
+  var shortDescription: String
+  var country: String
+  var currentTemperature: String
+  var moreInfo: [(title: String, info: String)]
+  var imageUrl: URL?
+  
+  init(networkModel: CurrentWeatherNetworkModel, unit: Units, temperatureUnit: TemperatureUnit) {
+    self.city = networkModel.name ?? "current.city.unknown".localized
+    self.shortDescription = networkModel.weather?.first?.main ?? "current.cloud.unknown".localized
+    self.country = networkModel.extraInfo?.country ?? "current.country.unknown".localized
+    self.currentTemperature = temperatureUnit.temp(value: round((networkModel.mainValues?.temp ?? 0) * 10 / 10))
+    self.moreInfo = [(title: String, info: String)]()
+    if let imagePath = networkModel.weather?.first?.icon {
+      self.imageUrl = constructImageUrl(imageName: imagePath)
     }
     
-    private func constructImageUrl(imageName: String) -> URL? {
-      return URL(string: ServiceResources.imagePath + imageName)
+    if let tempMin = networkModel.mainValues?.tempMin {
+      moreInfo.append((
+        title: "current.tempmin".localized,
+        info: temperatureUnit.temp(value: tempMin)
+      ))
     }
+    if let tempMax = networkModel.mainValues?.tempMax {
+      moreInfo.append((
+        title: "current.tempmax".localized,
+        info: temperatureUnit.temp(value: tempMax)
+      ))
+    }
+    if let desc = networkModel.weather?.first?.desc {
+      moreInfo.append((
+        title: "current.description".localized,
+        info: desc
+      ))
+    }
+    if let pressure = networkModel.mainValues?.pressure {
+      moreInfo.append((
+        title: "current.pressure".localized,
+        info: String(pressure)
+      ))
+    }
+    if let humidity = networkModel.mainValues?.humidity {
+      moreInfo.append((
+        title: "current.humidity".localized,
+        info: String(humidity) + " %"
+      ))
+    }
+    if let windSpeed = networkModel.wind?.speed {
+      moreInfo.append((
+        title: "current.windspeed".localized,
+        info: unit.speed(value: windSpeed)
+      ))
+    }
+    if let visibility = networkModel.visiblity {
+      moreInfo.append((
+        title: "current.visiblity".localized,
+        info: unit.distance(value: visibility)
+      ))
+    }
+    
+  }
+  
+  private func constructImageUrl(imageName: String) -> URL? {
+    return URL(string: ServiceResources.imagePath + imageName)
   }
 }
