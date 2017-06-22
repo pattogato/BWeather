@@ -42,6 +42,7 @@ class SearchViewController: UIViewController {
   fileprivate var viewModel: CurrentWeatherViewModelProtocol?
   private var countryPickerContainerView: UIView?
   fileprivate var zipSearchText: String?
+  fileprivate var viewTapGestureRecognizer: UITapGestureRecognizer?
   fileprivate var selectedCountryCode: String? {
     didSet {
       print(selectedCountryCode!)
@@ -122,10 +123,21 @@ class SearchViewController: UIViewController {
       default:
         break
       }
-    }.addDisposableTo(disposeBag)
+      }.addDisposableTo(disposeBag)
   }
   
+  fileprivate func enableViewGestureRecognizer(_ enable: Bool) {
+    if enable && viewTapGestureRecognizer == nil {
+      viewTapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(viewDidTap))
+      self.view.addGestureRecognizer(viewTapGestureRecognizer!)
+    }
+    viewTapGestureRecognizer?.isEnabled = true
+  }
   
+  func viewDidTap() {
+    searchBar.resignFirstResponder()
+    enableViewGestureRecognizer(false)
+  }
 }
 
 // MARK: - IBActions
@@ -153,6 +165,12 @@ extension SearchViewController: UISearchBarDelegate {
       searchCity(text: text)
     }
   }
+  
+  func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+    enableViewGestureRecognizer(true)
+  }
+  
+  
   
 }
 

@@ -34,7 +34,6 @@
 		B16D161D1EE1AEB600731719 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B16D161B1EE1AEB600731719 /* Main.storyboard */; };
 		B16D161F1EE1AF7300731719 /* ViewControllers.swift in Sources */ = {isa = PBXBuildFile; fileRef = B16D161E1EE1AF7300731719 /* ViewControllers.swift */; };
 		B28CE985E0EAE584F9C2D6FC /* Pods_BWeather.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7977F2053297F80832CD470C /* Pods_BWeather.framework */; };
-		F419A2A01EFBB18300502B8B /* GeolocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F419A29F1EFBB18300502B8B /* GeolocationManager.swift */; };
 		F419A2A21EFBB5DC00502B8B /* CLLocationManager+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = F419A2A11EFBB5DC00502B8B /* CLLocationManager+Rx.swift */; };
 		F48FC5731EF7213800475E8F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F48FC5721EF7213800475E8F /* Assets.xcassets */; };
 /* End PBXBuildFile section */
@@ -70,7 +69,6 @@
 		B16D16171EE1A99400731719 /* RecentSearchListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecentSearchListTableViewController.swift; sourceTree = "<group>"; };
 		B16D161C1EE1AEB600731719 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B16D161E1EE1AF7300731719 /* ViewControllers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllers.swift; sourceTree = "<group>"; };
-		F419A29F1EFBB18300502B8B /* GeolocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeolocationManager.swift; sourceTree = "<group>"; };
 		F419A2A11EFBB5DC00502B8B /* CLLocationManager+Rx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CLLocationManager+Rx.swift"; sourceTree = "<group>"; };
 		F48FC5721EF7213800475E8F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F725EACC7B39C7E8E71442A2 /* Pods-BWeather.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BWeather.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BWeather/Pods-BWeather.debug.xcconfig"; sourceTree = "<group>"; };
@@ -188,7 +186,6 @@
 				F419A2A11EFBB5DC00502B8B /* CLLocationManager+Rx.swift */,
 				B16D15F71EE1A28E00731719 /* ApplicationRouter.swift */,
 				B16D15F81EE1A28E00731719 /* DIManager.swift */,
-				F419A29F1EFBB18300502B8B /* GeolocationManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -399,7 +396,6 @@
 			files = (
 				B16D161F1EE1AF7300731719 /* ViewControllers.swift in Sources */,
 				B16D160E1EE1A28E00731719 /* Extensions.swift in Sources */,
-				F419A2A01EFBB18300502B8B /* GeolocationManager.swift in Sources */,
 				B16D16101EE1A28E00731719 /* ApplicationRouter.swift in Sources */,
 				B16D16141EE1A28E00731719 /* ServiceResources.swift in Sources */,
 				B16D160C1EE1A28E00731719 /* StoragesAssembly.swift in Sources */,

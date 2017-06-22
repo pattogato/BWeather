@@ -39,5 +39,7 @@
 		<key>NSAllowsArbitraryLoads</key>
 		<true/>
 	</dict>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>BWeather would like to use your location to determine the current weather around you.</string>
 </dict>
 </plist>

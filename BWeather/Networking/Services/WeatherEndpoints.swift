@@ -14,6 +14,7 @@ import Moya
 enum WeatherEndpoints {
   case currentWeatherByKeyword(keyword: String, units: Units)
   case currentWeatherByZip(zip: String, units: Units)
+  case currentWeatherByLocation(lat: Double, long: Double, units: Units)
 }
 
 extension WeatherEndpoints: TargetType {
@@ -24,14 +25,14 @@ extension WeatherEndpoints: TargetType {
   
   var path: String {
     switch self {
-    case .currentWeatherByKeyword, .currentWeatherByZip:
+    case .currentWeatherByKeyword, .currentWeatherByZip, .currentWeatherByLocation:
       return "weather"
     }
   }
   
   var method: Moya.Method {
     switch self {
-    case .currentWeatherByKeyword, .currentWeatherByZip:
+    case .currentWeatherByKeyword, .currentWeatherByZip, .currentWeatherByLocation:
       return .get
     }
   }
@@ -46,14 +47,20 @@ extension WeatherEndpoints: TargetType {
   
   var parameters: [String: Any]? {
     var params = ServiceResources.baseParams
+    let unitsParam: Units
     switch self {
     case .currentWeatherByKeyword(let keyword, let units):
       params.updateValue(keyword, forKey: ServiceResources.ParameterNames.keyword.name)
-      params.updateValue(units, forKey: ServiceResources.ParameterNames.units.name)
+      unitsParam = units
     case .currentWeatherByZip(let zip, let units):
       params.updateValue(zip, forKey: ServiceResources.ParameterNames.zip.name)
-      params.updateValue(units, forKey: ServiceResources.ParameterNames.units.name)
+      unitsParam = units
+    case .currentWeatherByLocation(let lat, let long, let units):
+      params.updateValue(lat, forKey: ServiceResources.ParameterNames.lat.name)
+      params.updateValue(long, forKey: ServiceResources.ParameterNames.lon.name)
+      unitsParam = units
     }
+    params.updateValue(unitsParam, forKey: ServiceResources.ParameterNames.units.name)
     
     return params
   }

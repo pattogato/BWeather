@@ -15,6 +15,7 @@ protocol WeatherServiceProtocol {
   
   func getCurrentWeather(keyword: String) -> Observable<CurrentWeatherNetworkModel>
   func getCurrentWeather(zipCode: String, country: String) -> Observable<CurrentWeatherNetworkModel>
+  func getCurrentWeather(lat: Double, lon: Double) -> Observable<CurrentWeatherNetworkModel>
 }
 
 // MARK: - MyDog Service implementation
@@ -44,6 +45,13 @@ final class WeatherService: WeatherServiceProtocol {
     let zipAndCountry = zipCode + "," + country
     return self.provider
       .request(.currentWeatherByZip(zip: zipAndCountry, units: recentStorage.preferredUnit))
+      .retry(ServiceResources.maxRetryCount)
+      .mapObject(CurrentWeatherNetworkModel.self)
+  }
+  
+  func getCurrentWeather(lat: Double, lon: Double) -> Observable<CurrentWeatherNetworkModel> {
+    return self.provider
+      .request(.currentWeatherByLocation(lat: lat, long: lon, units: recentStorage.preferredUnit))
       .retry(ServiceResources.maxRetryCount)
       .mapObject(CurrentWeatherNetworkModel.self)
   }

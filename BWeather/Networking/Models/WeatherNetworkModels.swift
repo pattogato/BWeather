@@ -36,8 +36,10 @@ enum TemperatureUnit: Int {
   case fahrenheit
   case kelvin
   
-  func temp(value: Double) -> String {
-    let valueString = String(value)
+  func temp(value: Double, decimals: Int = 1) -> String {
+    let decimalValue = NSDecimalNumber(decimal: pow(10, decimals)).doubleValue
+    let roundedValue = round(value * decimalValue) / decimalValue
+    let valueString = String(roundedValue)
     switch self {
     case .celsius:
       return valueString + "°C"
@@ -124,8 +126,8 @@ struct WeatherMainValuesNetworkModel: Mappable {
     temp <- map["temp"]
     pressure <- map["pressure"]
     humidity <- map["humidity"]
-    tempMin <- map["tempMin"]
-    tempMax <- map["tempMax"]
+    tempMin <- map["temp_min"]
+    tempMax <- map["temp_max"]
   }
   
   init?(map: Map) { }

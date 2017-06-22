@@ -22,6 +22,8 @@ struct ServiceResources {
     case appId
     case zip
     case units
+    case lat
+    case lon
     
     var name: String {
       switch self {
@@ -33,6 +35,10 @@ struct ServiceResources {
         return "zip"
       case .units:
         return "units"
+      case .lat:
+        return "lat"
+      case .lon:
+        return "lon"
       }
     }
   }
