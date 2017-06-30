@@ -22,4 +22,10 @@ target 'BWeather' do
     pod 'RxOptional', '~> 3.1'                  # Includes RxSwift, RxCocoa
     pod 'CountryPicker', '~> 1.3'               # Select country from a list
 
+  target 'BWeatherTests' do
+    
+    pod 'ObjectMapper', '~> 2.2.7'
+    
+  end
+
 end

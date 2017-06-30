@@ -65,10 +65,12 @@ final class SearchDataProvider: SearchDataProviderProtocol {
     return currentLocation.take(1).flatMap({ location in
       return self.weatherService
         .getCurrentWeather(lat: location.coordinate.latitude, lon: location.coordinate.longitude)
-        .map({ WeatherViewModel(
-          networkModel: $0,
-          unit: self.recentStorage.preferredUnit,
-          temperatureUnit: self.recentStorage.preferredTemperatureUnit)
+        .map({
+          self.recentStorage.saveItem(RecentSearchModel(name: $0.name ?? "", extraInfo: $0.extraInfo?.country ?? "", id: nil))
+          return WeatherViewModel(
+            networkModel: $0,
+            unit: self.recentStorage.preferredUnit,
+            temperatureUnit: self.recentStorage.preferredTemperatureUnit)
         })
     })
   }

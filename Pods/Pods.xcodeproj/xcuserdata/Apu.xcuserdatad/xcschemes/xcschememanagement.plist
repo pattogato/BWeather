@@ -34,6 +34,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Pods-BWeather-BWeatherTests.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-BWeather.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -123,6 +128,11 @@
 			<true/>
 		</dict>
 		<key>9F227078257A349A639BB38277429F5B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>BE5672C70308DD7E6F851210C29EB4B4</key>
 		<dict>
 			<key>primary</key>
 			<true/>
