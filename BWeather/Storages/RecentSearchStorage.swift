@@ -32,7 +32,7 @@ final class RecentSearchStorage: RecentSearchStorageProtocol {
   
   func saveItem(_ item: RecentSearchListItemViewModelProtocol) {
     var savedItems = getSavedItems()
-    savedItems = savedItems.filter({ $0.name != item.name && $0.extraInfo != item.extraInfo })
+    savedItems = savedItems.filter({ $0.name != item.name })
     savedItems.insert(item, at: 0)
     saveItemList(items: savedItems)
   }

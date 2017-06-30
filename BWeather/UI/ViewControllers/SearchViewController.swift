@@ -142,6 +142,9 @@ extension SearchViewController {
       switch event {
       case .next(let weatherViewModel):
         self.setupUI(viewModel: weatherViewModel)
+        if let cityName = self.viewModel?.city {
+          self.searchBar.text = cityName
+        }
       case .error(let error):
         AlertHelper.showError(from: self, error: error, retryActionHandler: { (_) in
           self.searchForLocation()
@@ -149,7 +152,7 @@ extension SearchViewController {
       default:
         break
       }
-      }.addDisposableTo(disposeBag)
+    }.addDisposableTo(disposeBag)
   }
   
   fileprivate func enableViewGestureRecognizer(_ enable: Bool) {
@@ -170,7 +173,7 @@ extension SearchViewController {
       default:
         break
       }
-    }.addDisposableTo(disposeBag)
+      }.addDisposableTo(disposeBag)
   }
   
   fileprivate func showNoRecentsLabel(_ show: Bool) {

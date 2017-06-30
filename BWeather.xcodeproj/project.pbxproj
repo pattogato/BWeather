@@ -304,7 +304,7 @@
 				TargetAttributes = {
 					B16D15D61EE1A11E00731719 = {
 						CreatedOnToolsVersion = 8.1;
-						DevelopmentTeam = F92UH89VDX;
+						DevelopmentTeam = 837W344MF8;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -539,8 +539,9 @@
 			baseConfigurationReference = F725EACC7B39C7E8E71442A2 /* Pods-BWeather.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = F92UH89VDX;
+				DEVELOPMENT_TEAM = 837W344MF8;
 				INFOPLIST_FILE = BWeather/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = hu.bence.BWeather;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -553,8 +554,9 @@
 			baseConfigurationReference = 587A7C8CFDAB0FE4BE71756B /* Pods-BWeather.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = F92UH89VDX;
+				DEVELOPMENT_TEAM = 837W344MF8;
 				INFOPLIST_FILE = BWeather/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = hu.bence.BWeather;
 				PRODUCT_NAME = "$(TARGET_NAME)";

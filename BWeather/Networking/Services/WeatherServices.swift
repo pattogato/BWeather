@@ -12,9 +12,16 @@ import Moya_ObjectMapper
 import Moya
 
 protocol WeatherServiceProtocol {
-  
+  /// Creates a request then executes it, to fetch weather info
+  /// - Parameter keyword: the searched text
   func getCurrentWeather(keyword: String) -> Observable<CurrentWeatherNetworkModel>
+  // Creates a request then executes it, to fetch weather info
+  /// - Parameter zipCode: numeric String representing the postal code
+  /// - Parameter country: two letter country name short form
   func getCurrentWeather(zipCode: String, country: String) -> Observable<CurrentWeatherNetworkModel>
+  // Creates a request then executes it, to fetch weather info
+  /// - Parameter lat: position's latitude
+  /// - Parameter lat: position's longitude
   func getCurrentWeather(lat: Double, lon: Double) -> Observable<CurrentWeatherNetworkModel>
 }
 

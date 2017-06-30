@@ -65,29 +65,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Pods/Moya/Sources/RxMoya/RxMoyaProvider.swift"
-            timestampString = "518383264.782171"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "26"
-            endingLineNumber = "26"
-            landmarkName = "request(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "BWeather/UI/ViewControllers/RecentSearchListTableViewController.swift"
             timestampString = "518389047.898214"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "63"
             endingLineNumber = "63"
-            landmarkName = "editButtonDidTouch(_:)"
+            landmarkName = "showNoItemsLabel(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -97,13 +81,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "BWeather/Networking/Models/WeatherNetworkModels.swift"
-            timestampString = "518715279.383806"
+            filePath = "BWeather/Storages/RecentSearchStorage.swift"
+            timestampString = "520526417.592014"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "108"
-            endingLineNumber = "108"
-            landmarkName = "mapping(map:)"
+            startingLineNumber = "34"
+            endingLineNumber = "34"
+            landmarkName = "saveItem(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
