@@ -8,6 +8,7 @@
 
 import XCTest
 import ObjectMapper
+import RxSwift
 
 enum ParseError: Error {
   case invalidJSON
@@ -16,85 +17,86 @@ enum ParseError: Error {
 
 class ParseTests: XCTestCase {
   
+  private var weatherService: WeatherServiceProtocol!
+  private var disposeBag = DisposeBag()
+  private let networkTimeout: TimeInterval = 10.0
+  
   override func setUp() {
     super.setUp()
-    // Put setup code here. This method is called before the invocation of each test method in the class.
+    
+    weatherService = DIManager.resolve(service: WeatherServiceProtocol.self)
   }
   
   override func tearDown() {
-    // Put teardown code here. This method is called after the invocation of each test method in the class.
+    
+    
     super.tearDown()
   }
   
-  func testParseWeatherNetworkModel() {
-    do {
-      let jsonData = try readJson(fileName: "WeatherNetworkModelSampleData")
-      guard let networkModel = CurrentWeatherNetworkModel(JSON: jsonData) else {
-        XCTFail("CurrentWeatherNetworkModel parsing failed")
-        return
-      }
-      
-      // Assert models
-      XCTAssertNotNil(networkModel)
-      XCTAssertNotNil(networkModel.coordinates)
-      XCTAssertNotNil(networkModel.weather?.first)
-      XCTAssertNotNil(networkModel.mainValues)
-      XCTAssertNotNil(networkModel.wind)
-      XCTAssertNotNil(networkModel.clouds)
-      XCTAssertNotNil(networkModel.extraInfo)
-      
-      // Assert current model values
-      XCTAssertEqual(networkModel.base, "stations")
-      XCTAssertEqual(networkModel.visiblity, 16093)
-      XCTAssertEqual(networkModel.date, Date(timeIntervalSince1970: 1485788160))
-      XCTAssertEqual(networkModel.id, "5375480")
-      XCTAssertEqual(networkModel.name, "Mountain View")
-      
-      // Assert coordinate model values
-      XCTAssertEqual(networkModel.coordinates?.lat, 37.39)
-      XCTAssertEqual(networkModel.coordinates?.lat, -122.08)
-      
-      // Assert WeatherNetworkModel
-      XCTAssertEqual(networkModel.weather?.first?.id, 500)
-      XCTAssertEqual(networkModel.weather?.first?.main, "Rain")
-      XCTAssertEqual(networkModel.weather?.first?.icon, "10n")
-      XCTAssertEqual(networkModel.weather?.first?.desc, "light rain")
-      
-      // Assert WeatherMainValuesNetworkModel
-      XCTAssertEqual(networkModel.mainValues?.humidity, 86)
-      XCTAssertEqual(networkModel.mainValues?.temp, 277.14)
-      XCTAssertEqual(networkModel.mainValues?.pressure, 1025)
-      XCTAssertEqual(networkModel.mainValues?.tempMax, 279.15)
-      XCTAssertEqual(networkModel.mainValues?.tempMin, 275.15)
-      
-      // Assert WindValueNetworkModel
-      XCTAssertEqual(networkModel.wind?.degree, 53.005)
-      XCTAssertEqual(networkModel.wind?.speed, 1.67)
-      
-      // Assert CloudsNetworkModel
-      XCTAssertEqual(networkModel.clouds?.all, "1")
-      
-      // Assert ExtraWeatherInfoNetworkModel
-      XCTAssertEqual(networkModel.extraInfo?.country, "US")
-      XCTAssertEqual(networkModel.extraInfo?.sunrise, Date(timeIntervalSince1970: 1485789140))
-      XCTAssertEqual(networkModel.extraInfo?.sunset, Date(timeIntervalSince1970: 1485826300))
-    } catch let error {
-      print(error)
-    }
+  func testValidKeywordSearch() {
+    let expect = expectation(description: "Valid keyword search expectation")
+    weatherService.getCurrentWeather(keyword: "Budapest")
+      .subscribe(onNext: { (weatherModel) in
+        XCTAssertNotNil(weatherModel)
+        expect.fulfill()
+      }).addDisposableTo(disposeBag)
+    
+    waitForExpectations(timeout: networkTimeout, handler: nil)
   }
   
-  /// https://stackoverflow.com/questions/40438784/read-json-file-with-swift-3
-  private func readJson(fileName: String) throws -> [String: Any] {
-    if let file = Bundle.main.url(forResource: fileName, withExtension: "json") {
-      let data = try Data(contentsOf: file)
-      let json = try JSONSerialization.jsonObject(with: data, options: [])
-      if let object = json as? [String: Any] {
-        return object
-      } else {
-        throw ParseError.invalidJSON
-      }
-    } else {
-      throw ParseError.fileNotFound
-    }
+  func testInvalidKeywordSearch() {
+    let expect = expectation(description: "invalid keyword search expectation")
+    weatherService.getCurrentWeather(keyword: "lgjdugjeiurghslieurglisuerhglisur")
+      .subscribe { (event) in
+        XCTAssertNotNil(event.error)
+        expect.fulfill()
+      }.addDisposableTo(disposeBag)
+    
+    waitForExpectations(timeout: networkTimeout, handler: nil)
+  }
+  
+  func testValidZipSearch() {
+    let expect = expectation(description: "Valid zip search expectation")
+    weatherService.getCurrentWeather(zipCode: "1076", country: "hu")
+      .subscribe(onNext: { (weatherModel) in
+        XCTAssertNotNil(weatherModel)
+        expect.fulfill()
+      }).addDisposableTo(disposeBag)
+    
+    waitForExpectations(timeout: networkTimeout, handler: nil)
+  }
+  
+  func testInvalidZipSearch() {
+    let expect = expectation(description: "Invalid zip search expectation")
+    weatherService.getCurrentWeather(zipCode: "1076", country: "us")
+      .subscribe { (event) in
+        XCTAssertNotNil(event.error)
+        expect.fulfill()
+      }.addDisposableTo(disposeBag)
+    
+    waitForExpectations(timeout: networkTimeout, handler: nil)
+  }
+  
+  func testValidLocationSearch() {
+    let expect = expectation(description: "Valid location search expectation")
+    // Search for Budapest's location
+    weatherService.getCurrentWeather(lat: 47.5, lon: 19.03)
+      .subscribe(onNext: { (weatherModel) in
+        XCTAssertNotNil(weatherModel)
+        expect.fulfill()
+      }).addDisposableTo(disposeBag)
+    
+    waitForExpectations(timeout: networkTimeout, handler: nil)
+  }
+  
+  func testInvalidLocationSerach() {
+    let expect = expectation(description: "Invalid location search expectation")
+    weatherService.getCurrentWeather(lat: 250, lon: -300)
+      .subscribe { (event) in
+        XCTAssertNotNil(event.error)
+        expect.fulfill()
+      }.addDisposableTo(disposeBag)
+    
+    waitForExpectations(timeout: networkTimeout, handler: nil)
   }
 }

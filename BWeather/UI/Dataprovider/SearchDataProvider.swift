@@ -14,6 +14,22 @@ enum SearchError: Error {
   case NoRecent
 }
 
+protocol SearchDataProviderProtocol {
+  func search(for text: String) -> Observable<CurrentWeatherViewModelProtocol>
+  func searchFor(zip: String, country: String) -> Observable<CurrentWeatherViewModelProtocol>
+  func searchForLocation() -> Observable<CurrentWeatherViewModelProtocol>
+  func loadMostRecentLocation() -> Observable<CurrentWeatherViewModelProtocol>
+}
+
+protocol CurrentWeatherViewModelProtocol {
+  var city: String { get }
+  var country: String { get }
+  var shortDescription: String { get }
+  var currentTemperature: String { get }
+  var imageUrl: URL? { get }
+  var moreInfo: [(title: String, info: String)] { get }
+}
+
 final class SearchDataProvider: SearchDataProviderProtocol {
   
   private let weatherService: WeatherServiceProtocol

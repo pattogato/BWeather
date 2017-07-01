@@ -8,6 +8,18 @@
 
 import Foundation
 
+protocol RecentSearchListDataProviderProtocol {
+  func numberOfItems() -> Int
+  func item(at indexPath: IndexPath) -> RecentSearchListItemViewModelProtocol
+  func deleteItem(at indexPath: IndexPath)
+}
+
+protocol RecentSearchListItemViewModelProtocol: NSCoding {
+  var name: String { get }
+  var extraInfo: String { get }
+  var id: String { get }
+}
+
 final class RecentSearchListDataProvider: RecentSearchListDataProviderProtocol {
   
   private let recentSearchStorage: RecentSearchStorageProtocol

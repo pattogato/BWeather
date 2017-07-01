@@ -66,28 +66,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BWeather/UI/ViewControllers/RecentSearchListTableViewController.swift"
-            timestampString = "518389047.898214"
+            timestampString = "520602249.505176"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "63"
-            endingLineNumber = "63"
+            startingLineNumber = "51"
+            endingLineNumber = "51"
             landmarkName = "showNoItemsLabel(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "BWeather/Storages/RecentSearchStorage.swift"
-            timestampString = "520526417.592014"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "34"
-            endingLineNumber = "34"
-            landmarkName = "saveItem(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

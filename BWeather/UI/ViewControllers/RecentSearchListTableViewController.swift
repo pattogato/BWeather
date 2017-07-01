@@ -13,18 +13,6 @@ protocol RecentSearchListDelegate: class {
   func itemTouched(text city: String)
 }
 
-protocol RecentSearchListDataProviderProtocol {
-  func numberOfItems() -> Int
-  func item(at indexPath: IndexPath) -> RecentSearchListItemViewModelProtocol
-  func deleteItem(at indexPath: IndexPath)
-}
-
-protocol RecentSearchListItemViewModelProtocol: NSCoding {
-  var name: String { get }
-  var extraInfo: String { get }
-  var id: String { get }
-}
-
 final class RecentSearchListTableViewController: UITableViewController {
   
   fileprivate struct Constants {

@@ -25,6 +25,7 @@ target 'BWeather' do
   target 'BWeatherTests' do
     
     pod 'ObjectMapper', '~> 2.2.7'
+    pod 'Swinject', '~> 2.0.0'
     
   end
 
