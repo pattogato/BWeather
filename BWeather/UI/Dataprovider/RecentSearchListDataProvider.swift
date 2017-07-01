@@ -20,6 +20,10 @@ protocol RecentSearchListItemViewModelProtocol: NSCoding {
   var id: String { get }
 }
 
+func ==(lhs: RecentSearchListItemViewModelProtocol, rhs: RecentSearchListItemViewModelProtocol) -> Bool {
+  return lhs.id == rhs.id
+}
+
 final class RecentSearchListDataProvider: RecentSearchListDataProviderProtocol {
   
   private let recentSearchStorage: RecentSearchStorageProtocol

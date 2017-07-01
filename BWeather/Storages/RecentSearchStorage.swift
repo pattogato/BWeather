@@ -12,6 +12,7 @@ protocol RecentSearchStorageProtocol {
   func saveItem(_ item: RecentSearchListItemViewModelProtocol)
   func getSavedItems() -> [RecentSearchListItemViewModelProtocol]
   func deleteItem(_ item: RecentSearchListItemViewModelProtocol)
+  func wipeStorage()
   
   var preferredUnit: Units { get set }
   var preferredTemperatureUnit: TemperatureUnit { get set }
@@ -19,15 +20,35 @@ protocol RecentSearchStorageProtocol {
 
 final class RecentSearchStorage: RecentSearchStorageProtocol {
   
-  private let recentSearchesKey = "userRecentSearchKey"
-  private let unitKey = "unitKey"
-  private let temperatureUnitKey = "tempUnitKey"
+  private let searchPrefix: String
+  
+  private var recentSearchesKey: String {
+    get {
+      return searchPrefix + "recentSearchKey"
+    }
+  }
+  
+  private var unitKey: String {
+    get {
+      return searchPrefix + "unitKey"
+    }
+  }
+  
+  private var temperatureUnitKey: String {
+    get {
+      return searchPrefix + "tempUnitKey"
+    }
+  }
   
   private let defaultUnit: Units = .metric
   private let defaultTemperatureUnit: TemperatureUnit = .celsius
   
   private var defaults: UserDefaults {
     return .standard
+  }
+  
+  init(searchPrefix: String) {
+    self.searchPrefix = searchPrefix
   }
   
   func saveItem(_ item: RecentSearchListItemViewModelProtocol) {
@@ -49,6 +70,10 @@ final class RecentSearchStorage: RecentSearchStorageProtocol {
       items: getSavedItems()
         .filter({ $0.id != item.id })
     )
+  }
+  
+  func wipeStorage() {
+    saveItemList(items: [RecentSearchListItemViewModelProtocol]())
   }
   
   var preferredUnit: Units {

@@ -53,6 +53,7 @@
 		B19EAFA01F07C2430030B367 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B16D15F41EE1A28E00731719 /* Extensions.swift */; };
 		B19EAFA11F07C25B0030B367 /* RecentSearchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13A2B3E1EF3D00B00A628A8 /* RecentSearchModel.swift */; };
 		B19EAFA21F07C26B0030B367 /* CLLocationManager+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = F419A2A11EFBB5DC00502B8B /* CLLocationManager+Rx.swift */; };
+		B19EAFA41F07E9000030B367 /* RecentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B19EAFA31F07E9000030B367 /* RecentTests.swift */; };
 		B28CE985E0EAE584F9C2D6FC /* Pods_BWeather.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7977F2053297F80832CD470C /* Pods_BWeather.framework */; };
 		F419A2A21EFBB5DC00502B8B /* CLLocationManager+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = F419A2A11EFBB5DC00502B8B /* CLLocationManager+Rx.swift */; };
 		F48FC5731EF7213800475E8F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F48FC5721EF7213800475E8F /* Assets.xcassets */; };
@@ -110,6 +111,7 @@
 		B19EAF8F1F07B9550030B367 /* ServicesAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServicesAssembly.swift; sourceTree = "<group>"; };
 		B19EAF911F07B9670030B367 /* DataprovidersAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataprovidersAssembly.swift; sourceTree = "<group>"; };
 		B19EAF9B1F07BEFC0030B367 /* NetworkParsingTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkParsingTests.swift; sourceTree = "<group>"; };
+		B19EAFA31F07E9000030B367 /* RecentTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecentTests.swift; sourceTree = "<group>"; };
 		C7CBBDECF7C507CD8550F0AE /* Pods_BWeather_BWeatherTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BWeather_BWeatherTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F419A2A11EFBB5DC00502B8B /* CLLocationManager+Rx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CLLocationManager+Rx.swift"; sourceTree = "<group>"; };
 		F48FC5721EF7213800475E8F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -332,6 +334,7 @@
 				B19EAF7C1F06A48C0030B367 /* Info.plist */,
 				B19EAF821F06A6010030B367 /* NetworkTests.swift */,
 				B19EAF9B1F07BEFC0030B367 /* NetworkParsingTests.swift */,
+				B19EAFA31F07E9000030B367 /* RecentTests.swift */,
 			);
 			path = BWeatherTests;
 			sourceTree = "<group>";
@@ -611,6 +614,7 @@
 				B19EAFA21F07C26B0030B367 /* CLLocationManager+Rx.swift in Sources */,
 				B19EAF881F06A7080030B367 /* WeatherNetworkModels.swift in Sources */,
 				B19EAF921F07B9670030B367 /* DataprovidersAssembly.swift in Sources */,
+				B19EAFA41F07E9000030B367 /* RecentTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

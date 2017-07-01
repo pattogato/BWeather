@@ -13,7 +13,7 @@ final class StoragesAssembly: Assembly {
   
   func assemble(container: Container) {
     container.register(RecentSearchStorageProtocol.self) { r in
-      return RecentSearchStorage()
+      return RecentSearchStorage(searchPrefix: "recentStore")
     }
   }
   

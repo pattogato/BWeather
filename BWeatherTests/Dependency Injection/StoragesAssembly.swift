@@ -15,7 +15,7 @@ final class StoragesAssembly: Assembly {
     // Resolve recent storage protocol implementation
     // With the objectscope .container it will be singleton
     container.register(RecentSearchStorageProtocol.self) { r in
-      return RecentSearchStorage()
+      return RecentSearchStorage(searchPrefix: "testRecent")
     }.inObjectScope(.container)
   }
   
