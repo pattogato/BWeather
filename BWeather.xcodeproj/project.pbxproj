@@ -428,7 +428,7 @@
 				TargetAttributes = {
 					B16D15D61EE1A11E00731719 = {
 						CreatedOnToolsVersion = 8.1;
-						DevelopmentTeam = 837W344MF8;
+						DevelopmentTeam = 44DEKX8TFR;
 						ProvisioningStyle = Automatic;
 					};
 					B19EAF771F06A48C0030B367 = {
@@ -713,9 +713,9 @@
 			baseConfigurationReference = 6EB7619FAB57717FF25CD0E4 /* Pods-BWeather.canadadebug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 837W344MF8;
+				DEVELOPMENT_TEAM = 44DEKX8TFR;
 				INFOPLIST_FILE = BWeather/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = hu.bence.BWeather;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -788,9 +788,9 @@
 			baseConfigurationReference = 1EB787551CDA8FC8056175E5 /* Pods-BWeather.canadarelease.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 837W344MF8;
+				DEVELOPMENT_TEAM = 44DEKX8TFR;
 				INFOPLIST_FILE = BWeather/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = hu.bence.BWeather;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -914,9 +914,9 @@
 			baseConfigurationReference = 6342CCE56FB74B93BCF20D6E /* Pods-BWeather.australiadebug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 837W344MF8;
+				DEVELOPMENT_TEAM = 44DEKX8TFR;
 				INFOPLIST_FILE = BWeather/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = hu.bence.BWeather;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -929,9 +929,9 @@
 			baseConfigurationReference = 34838F659F5E091F8CB2D34A /* Pods-BWeather.australiarelease.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 837W344MF8;
+				DEVELOPMENT_TEAM = 44DEKX8TFR;
 				INFOPLIST_FILE = BWeather/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = hu.bence.BWeather;
 				PRODUCT_NAME = "$(TARGET_NAME)";
