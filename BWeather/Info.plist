@@ -41,5 +41,9 @@
 	</dict>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>BWeather would like to use your location to determine the current weather around you.</string>
+	<key>CFBundleDisplayName</key>
+	<string>${BUNDLE_DISPLAY_NAME}</string>
+	<key>Color schema</key>
+	<string>${COLOR_SCHEMA}</string>
 </dict>
 </plist>

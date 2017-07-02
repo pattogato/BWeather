@@ -72,8 +72,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1EB787551CDA8FC8056175E5 /* Pods-BWeather.canadarelease.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BWeather.canadarelease.xcconfig"; path = "Pods/Target Support Files/Pods-BWeather/Pods-BWeather.canadarelease.xcconfig"; sourceTree = "<group>"; };
+		34838F659F5E091F8CB2D34A /* Pods-BWeather.australiarelease.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BWeather.australiarelease.xcconfig"; path = "Pods/Target Support Files/Pods-BWeather/Pods-BWeather.australiarelease.xcconfig"; sourceTree = "<group>"; };
 		587A7C8CFDAB0FE4BE71756B /* Pods-BWeather.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BWeather.release.xcconfig"; path = "Pods/Target Support Files/Pods-BWeather/Pods-BWeather.release.xcconfig"; sourceTree = "<group>"; };
+		6342CCE56FB74B93BCF20D6E /* Pods-BWeather.australiadebug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BWeather.australiadebug.xcconfig"; path = "Pods/Target Support Files/Pods-BWeather/Pods-BWeather.australiadebug.xcconfig"; sourceTree = "<group>"; };
+		6D0993507DCA29F4342EB887 /* Pods-BWeather-BWeatherTests.australiarelease.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BWeather-BWeatherTests.australiarelease.xcconfig"; path = "Pods/Target Support Files/Pods-BWeather-BWeatherTests/Pods-BWeather-BWeatherTests.australiarelease.xcconfig"; sourceTree = "<group>"; };
+		6EB7619FAB57717FF25CD0E4 /* Pods-BWeather.canadadebug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BWeather.canadadebug.xcconfig"; path = "Pods/Target Support Files/Pods-BWeather/Pods-BWeather.canadadebug.xcconfig"; sourceTree = "<group>"; };
 		7977F2053297F80832CD470C /* Pods_BWeather.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BWeather.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A62540DC3A0C6985B881E32F /* Pods-BWeather-BWeatherTests.canadadebug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BWeather-BWeatherTests.canadadebug.xcconfig"; path = "Pods/Target Support Files/Pods-BWeather-BWeatherTests/Pods-BWeather-BWeatherTests.canadadebug.xcconfig"; sourceTree = "<group>"; };
 		A845FB431A73DF4ACA97681D /* Pods-BWeather-BWeatherTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BWeather-BWeatherTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BWeather-BWeatherTests/Pods-BWeather-BWeatherTests.release.xcconfig"; sourceTree = "<group>"; };
 		AA92B0E605B46BCBB1D320F9 /* Pods-BWeather-BWeatherTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BWeather-BWeatherTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BWeather-BWeatherTests/Pods-BWeather-BWeatherTests.debug.xcconfig"; sourceTree = "<group>"; };
 		B13A2B2C1EE5562800A628A8 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
@@ -116,6 +122,8 @@
 		B19EAFA31F07E9000030B367 /* RecentTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecentTests.swift; sourceTree = "<group>"; };
 		B1F9AE591F09245F00D57C26 /* UtilTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UtilTests.swift; sourceTree = "<group>"; };
 		B1F9AE5B1F0928B600D57C26 /* RecentSearchDataProviderTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecentSearchDataProviderTests.swift; sourceTree = "<group>"; };
+		B70F5518AFD219377CE7571B /* Pods-BWeather-BWeatherTests.canadarelease.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BWeather-BWeatherTests.canadarelease.xcconfig"; path = "Pods/Target Support Files/Pods-BWeather-BWeatherTests/Pods-BWeather-BWeatherTests.canadarelease.xcconfig"; sourceTree = "<group>"; };
+		B7B22FC0BFBB0F3CF045EEA9 /* Pods-BWeather-BWeatherTests.australiadebug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BWeather-BWeatherTests.australiadebug.xcconfig"; path = "Pods/Target Support Files/Pods-BWeather-BWeatherTests/Pods-BWeather-BWeatherTests.australiadebug.xcconfig"; sourceTree = "<group>"; };
 		C7CBBDECF7C507CD8550F0AE /* Pods_BWeather_BWeatherTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BWeather_BWeatherTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F419A2A11EFBB5DC00502B8B /* CLLocationManager+Rx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CLLocationManager+Rx.swift"; sourceTree = "<group>"; };
 		F48FC5721EF7213800475E8F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -149,6 +157,14 @@
 				587A7C8CFDAB0FE4BE71756B /* Pods-BWeather.release.xcconfig */,
 				AA92B0E605B46BCBB1D320F9 /* Pods-BWeather-BWeatherTests.debug.xcconfig */,
 				A845FB431A73DF4ACA97681D /* Pods-BWeather-BWeatherTests.release.xcconfig */,
+				6342CCE56FB74B93BCF20D6E /* Pods-BWeather.australiadebug.xcconfig */,
+				34838F659F5E091F8CB2D34A /* Pods-BWeather.australiarelease.xcconfig */,
+				6EB7619FAB57717FF25CD0E4 /* Pods-BWeather.canadadebug.xcconfig */,
+				1EB787551CDA8FC8056175E5 /* Pods-BWeather.canadarelease.xcconfig */,
+				B7B22FC0BFBB0F3CF045EEA9 /* Pods-BWeather-BWeatherTests.australiadebug.xcconfig */,
+				6D0993507DCA29F4342EB887 /* Pods-BWeather-BWeatherTests.australiarelease.xcconfig */,
+				A62540DC3A0C6985B881E32F /* Pods-BWeather-BWeatherTests.canadadebug.xcconfig */,
+				B70F5518AFD219377CE7571B /* Pods-BWeather-BWeatherTests.canadarelease.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -280,7 +296,6 @@
 		B16D16001EE1A28E00731719 /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				B16D16011EE1A28E00731719 /* CustomUIElements */,
 				B16D16021EE1A28E00731719 /* Dataprovider */,
 				B16D16031EE1A28E00731719 /* Storyboards */,
 				B16D16061EE1A28E00731719 /* TableViewCells */,
@@ -288,13 +303,6 @@
 				B16D161E1EE1AF7300731719 /* ViewControllers.swift */,
 			);
 			path = UI;
-			sourceTree = "<group>";
-		};
-		B16D16011EE1A28E00731719 /* CustomUIElements */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = CustomUIElements;
 			sourceTree = "<group>";
 		};
 		B16D16021EE1A28E00731719 /* Dataprovider */ = {
@@ -656,10 +664,11 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		B16D15E71EE1A11E00731719 /* Debug */ = {
+		B10E580A1F094390005CFFE1 /* CanadaDebug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				BUNDLE_DISPLAY_NAME = "My Eh Weather_DEV";
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -678,6 +687,157 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COLOR_SCHEMA = "#D72120";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = CanadaDebug;
+		};
+		B10E580B1F094390005CFFE1 /* CanadaDebug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6EB7619FAB57717FF25CD0E4 /* Pods-BWeather.canadadebug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 837W344MF8;
+				INFOPLIST_FILE = BWeather/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = hu.bence.BWeather;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = CanadaDebug;
+		};
+		B10E580C1F094390005CFFE1 /* CanadaDebug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A62540DC3A0C6985B881E32F /* Pods-BWeather-BWeatherTests.canadadebug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
+				DEVELOPMENT_TEAM = 837W344MF8;
+				INFOPLIST_FILE = BWeatherTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = hu.bence.BWeatherTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BWeather.app/BWeather";
+			};
+			name = CanadaDebug;
+		};
+		B10E580D1F09439C005CFFE1 /* CanadaRelease */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				BUNDLE_DISPLAY_NAME = "My Eh Weather";
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COLOR_SCHEMA = "#D72120";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = CanadaRelease;
+		};
+		B10E580E1F09439C005CFFE1 /* CanadaRelease */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1EB787551CDA8FC8056175E5 /* Pods-BWeather.canadarelease.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 837W344MF8;
+				INFOPLIST_FILE = BWeather/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = hu.bence.BWeather;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = CanadaRelease;
+		};
+		B10E580F1F09439C005CFFE1 /* CanadaRelease */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B70F5518AFD219377CE7571B /* Pods-BWeather-BWeatherTests.canadarelease.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
+				DEVELOPMENT_TEAM = 837W344MF8;
+				INFOPLIST_FILE = BWeatherTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = hu.bence.BWeatherTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BWeather.app/BWeather";
+			};
+			name = CanadaRelease;
+		};
+		B16D15E71EE1A11E00731719 /* AustraliaDebug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				BUNDLE_DISPLAY_NAME = "My Aussie Weather_DEV";
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COLOR_SCHEMA = "#030E88";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -703,12 +863,13 @@
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
-			name = Debug;
+			name = AustraliaDebug;
 		};
-		B16D15E81EE1A11E00731719 /* Release */ = {
+		B16D15E81EE1A11E00731719 /* AustraliaRelease */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				BUNDLE_DISPLAY_NAME = "My Aussie Weather";
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -727,6 +888,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COLOR_SCHEMA = "#030E88";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -745,11 +907,11 @@
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				VALIDATE_PRODUCT = YES;
 			};
-			name = Release;
+			name = AustraliaRelease;
 		};
-		B16D15EA1EE1A11E00731719 /* Debug */ = {
+		B16D15EA1EE1A11E00731719 /* AustraliaDebug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F725EACC7B39C7E8E71442A2 /* Pods-BWeather.debug.xcconfig */;
+			baseConfigurationReference = 6342CCE56FB74B93BCF20D6E /* Pods-BWeather.australiadebug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 837W344MF8;
@@ -760,11 +922,11 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
-			name = Debug;
+			name = AustraliaDebug;
 		};
-		B16D15EB1EE1A11E00731719 /* Release */ = {
+		B16D15EB1EE1A11E00731719 /* AustraliaRelease */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 587A7C8CFDAB0FE4BE71756B /* Pods-BWeather.release.xcconfig */;
+			baseConfigurationReference = 34838F659F5E091F8CB2D34A /* Pods-BWeather.australiarelease.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 837W344MF8;
@@ -775,11 +937,11 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
-			name = Release;
+			name = AustraliaRelease;
 		};
-		B19EAF801F06A48C0030B367 /* Debug */ = {
+		B19EAF801F06A48C0030B367 /* AustraliaDebug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = AA92B0E605B46BCBB1D320F9 /* Pods-BWeather-BWeatherTests.debug.xcconfig */;
+			baseConfigurationReference = B7B22FC0BFBB0F3CF045EEA9 /* Pods-BWeather-BWeatherTests.australiadebug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ENABLE_MODULES = YES;
@@ -792,11 +954,11 @@
 				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BWeather.app/BWeather";
 			};
-			name = Debug;
+			name = AustraliaDebug;
 		};
-		B19EAF811F06A48C0030B367 /* Release */ = {
+		B19EAF811F06A48C0030B367 /* AustraliaRelease */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A845FB431A73DF4ACA97681D /* Pods-BWeather-BWeatherTests.release.xcconfig */;
+			baseConfigurationReference = 6D0993507DCA29F4342EB887 /* Pods-BWeather-BWeatherTests.australiarelease.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ENABLE_MODULES = YES;
@@ -808,7 +970,7 @@
 				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BWeather.app/BWeather";
 			};
-			name = Release;
+			name = AustraliaRelease;
 		};
 /* End XCBuildConfiguration section */
 
@@ -816,29 +978,35 @@
 		B16D15D21EE1A11E00731719 /* Build configuration list for PBXProject "BWeather" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				B16D15E71EE1A11E00731719 /* Debug */,
-				B16D15E81EE1A11E00731719 /* Release */,
+				B16D15E71EE1A11E00731719 /* AustraliaDebug */,
+				B16D15E81EE1A11E00731719 /* AustraliaRelease */,
+				B10E580A1F094390005CFFE1 /* CanadaDebug */,
+				B10E580D1F09439C005CFFE1 /* CanadaRelease */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = AustraliaRelease;
 		};
 		B16D15E91EE1A11E00731719 /* Build configuration list for PBXNativeTarget "BWeather" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				B16D15EA1EE1A11E00731719 /* Debug */,
-				B16D15EB1EE1A11E00731719 /* Release */,
+				B16D15EA1EE1A11E00731719 /* AustraliaDebug */,
+				B16D15EB1EE1A11E00731719 /* AustraliaRelease */,
+				B10E580B1F094390005CFFE1 /* CanadaDebug */,
+				B10E580E1F09439C005CFFE1 /* CanadaRelease */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = AustraliaRelease;
 		};
 		B19EAF7F1F06A48C0030B367 /* Build configuration list for PBXNativeTarget "BWeatherTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				B19EAF801F06A48C0030B367 /* Debug */,
-				B19EAF811F06A48C0030B367 /* Release */,
+				B19EAF801F06A48C0030B367 /* AustraliaDebug */,
+				B19EAF811F06A48C0030B367 /* AustraliaRelease */,
+				B10E580C1F094390005CFFE1 /* CanadaDebug */,
+				B10E580F1F09439C005CFFE1 /* CanadaRelease */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = AustraliaRelease;
 		};
 /* End XCConfigurationList section */
 	};

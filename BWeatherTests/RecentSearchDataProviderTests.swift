@@ -70,6 +70,6 @@ class DataProviderTests: XCTestCase {
     }).addDisposableTo(disposeBag)
     waitForExpectations(timeout: networkTimeout, handler: nil)
   }
-  
+
   
 }

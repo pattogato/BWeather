@@ -20,11 +20,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     window = DIManager.resolve(service: UIWindow.self)
     DIManager.resolve(service: ApplicationRouterProtocol.self).start()
     
+    setupAppearances()
+    
     return true
   }
   
-  func applicationDidEnterBackground(_ application: UIApplication) {
-//    DIManager.resolve(service: CartManagerProtocol.self).persistCart()
+  private func setupAppearances() {
+    UIApplication.shared.keyWindow?.tintColor = UIColor.colorSchema
   }
   
 }
