@@ -21,11 +21,12 @@ class RecentTests: XCTestCase {
     super.setUp()
     // Put setup code here. This method is called before the invocation of each test method in the class.
     recentStorage = DIManager.resolve(service: RecentSearchStorageProtocol.self)
+    recentStorage.wipeStorage()
   }
   
   override func tearDown() {
     // Put teardown code here. This method is called after the invocation of each test method in the class.
-    recentStorage.wipeStorage()
+    
     super.tearDown()
   }
   

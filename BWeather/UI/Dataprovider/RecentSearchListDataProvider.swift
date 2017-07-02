@@ -12,6 +12,8 @@ protocol RecentSearchListDataProviderProtocol {
   func numberOfItems() -> Int
   func item(at indexPath: IndexPath) -> RecentSearchListItemViewModelProtocol
   func deleteItem(at indexPath: IndexPath)
+  
+  func wipeRecentHistory()
 }
 
 protocol RecentSearchListItemViewModelProtocol: NSCoding {
@@ -27,11 +29,14 @@ func ==(lhs: RecentSearchListItemViewModelProtocol, rhs: RecentSearchListItemVie
 final class RecentSearchListDataProvider: RecentSearchListDataProviderProtocol {
   
   private let recentSearchStorage: RecentSearchStorageProtocol
-  private var items = [RecentSearchListItemViewModelProtocol]()
+  private var items: [RecentSearchListItemViewModelProtocol] {
+    get {
+      return recentSearchStorage.getSavedItems()
+    }
+  }
   
   init(recentSearchStorage: RecentSearchStorageProtocol) {
     self.recentSearchStorage = recentSearchStorage
-    self.items = recentSearchStorage.getSavedItems()
   }
   
   func numberOfItems() -> Int {
@@ -44,7 +49,10 @@ final class RecentSearchListDataProvider: RecentSearchListDataProviderProtocol {
   
   func deleteItem(at indexPath: IndexPath) {
     recentSearchStorage.deleteItem(items[indexPath.row])
-    items.remove(at: indexPath.row)
+  }
+  
+  func wipeRecentHistory() {
+    recentSearchStorage.wipeStorage()
   }
   
 }

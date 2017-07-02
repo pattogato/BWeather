@@ -75,5 +75,117 @@
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BWeather/UI/Dataprovider/SearchDataProvider.swift"
+            timestampString = "520696174.718712"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "50"
+            endingLineNumber = "50"
+            landmarkName = "search(for:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "BWeather.SearchDataProvider.(search (for : Swift.String) -&gt; RxSwift.Observable&lt;BWeather.CurrentWeatherViewModelProtocol&gt;).(closure #1)"
+                  moduleName = "BWeather"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Volumes/Dev/Documents/iOS%20dev/Projects/other/BWeather/BWeather/UI/Dataprovider/SearchDataProvider.swift"
+                  timestampString = "520698181.752599"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "50"
+                  endingLineNumber = "50"
+                  offsetFromSymbolStart = "1308">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "BWeatherTests.SearchDataProvider.(search (for : Swift.String) -&gt; RxSwift.Observable&lt;BWeatherTests.CurrentWeatherViewModelProtocol&gt;).(closure #1)"
+                  moduleName = "BWeatherTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Volumes/Dev/Documents/iOS%20dev/Projects/other/BWeather/BWeather/UI/Dataprovider/SearchDataProvider.swift"
+                  timestampString = "520698182.76504"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "50"
+                  endingLineNumber = "50"
+                  offsetFromSymbolStart = "1308">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BWeather/Storages/RecentSearchStorage.swift"
+            timestampString = "520698045.741588"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "69"
+            endingLineNumber = "69"
+            landmarkName = "getSavedItems()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "BWeather.RecentSearchStorage.getSavedItems () -&gt; Swift.Array&lt;BWeather.RecentSearchListItemViewModelProtocol&gt;"
+                  moduleName = "BWeather"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Volumes/Dev/Documents/iOS%20dev/Projects/other/BWeather/BWeather/Storages/RecentSearchStorage.swift"
+                  timestampString = "520698181.756748"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "69"
+                  endingLineNumber = "69"
+                  offsetFromSymbolStart = "33">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "BWeatherTests.RecentSearchStorage.getSavedItems () -&gt; Swift.Array&lt;BWeatherTests.RecentSearchListItemViewModelProtocol&gt;"
+                  moduleName = "BWeatherTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Volumes/Dev/Documents/iOS%20dev/Projects/other/BWeather/BWeather/Storages/RecentSearchStorage.swift"
+                  timestampString = "520698182.767156"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "69"
+                  endingLineNumber = "69"
+                  offsetFromSymbolStart = "33">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BWeatherTests/RecentTests.swift"
+            timestampString = "520698274.910726"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "34"
+            endingLineNumber = "34"
+            landmarkName = "testSaveRecentItem()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>
